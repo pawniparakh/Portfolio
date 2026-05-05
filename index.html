@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawni Parakh — Portfolio</title>
+    <meta name="description" content="Portfolio of Pawni Parakh — Computer Science student, problem-solver, and lifelong learner.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+    <!-- ════════ CUSTOM CURSOR ════════ -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ════════ NAVBAR ════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-star">✦</span> Pawni Parakh
+        </a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-index="01">About</a>
+            <a href="#education" class="nav-link" data-index="02">Education</a>
+            <a href="#skills" class="nav-link" data-index="03">Skills</a>
+            <a href="#projects" class="nav-link" data-index="04">Projects</a>
+            <a href="#contact" class="nav-link" data-index="05">Contact</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ════════ MOBILE NAV ════════ -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#education" class="mobile-link">Education</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- ════════ HERO ════════ -->
+    <section class="hero" id="hero">
+        <!-- Giant background text -->
+        <div class="hero-bg-text" aria-hidden="true">
+            <span>PORTFOLIO</span>
+            <span>PORTFOLIO</span>
+            <span>PORTFOLIO</span>
+        </div>
+
+        <!-- Decorative blobs -->
+        <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <!-- Left — Image -->
+            <div class="hero-image-col">
+                <div class="hero-image-frame" id="heroFrame">
+                    <img src="Snapchat-1565381912.jpg" alt="Pawni Parakh" class="hero-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+                <!-- Floating badges around image -->
+                <div class="floating-badge badge-1">✦ Creative</div>
+                <div class="floating-badge badge-2">⚡ Coder</div>
+                <div class="floating-badge badge-3">🎯 Focused</div>
+            </div>
+
+            <!-- Right — Text -->
+            <div class="hero-text-col">
+                <p class="hero-greeting" id="heroGreeting">Hello, I'm</p>
+                <h1 class="hero-name" id="heroName">
+                    <span class="name-line">Pawni</span>
+                    <span class="name-line name-line-2">Parakh<span class="name-dot">.</span></span>
+                </h1>
+                <p class="hero-tagline" id="heroTagline">CS Engineering Student · Problem Solver · Lifelong Learner</p>
+
+                <div class="hero-socials" id="heroSocials">
+                    <a href="https://github.com/pawniparakh" target="_blank" class="social-pill" id="socialGithub">
+                        <span class="social-icon">GH</span> /pawniparakh
+                    </a>
+                    <a href="https://www.instagram.com/pawni.not.found/" target="_blank" class="social-pill" id="socialInstagram">
+                        <span class="social-icon">IG</span> @pawni.not.found
+                    </a>
+                    <a href="https://www.linkedin.com/in/pawni-parakh-488a082b5/" target="_blank" class="social-pill" id="socialLinkedin">
+                        <span class="social-icon">LI</span> /pawni-parakh
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ MARQUEE ════════ -->
+    <section class="marquee-section" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>CREATIVE</span><span class="marquee-dot">◆</span>
+                <span>CODER</span><span class="marquee-dot">◆</span>
+                <span>LEARNER</span><span class="marquee-dot">◆</span>
+                <span>PROBLEM SOLVER</span><span class="marquee-dot">◆</span>
+                <span>CREATIVE</span><span class="marquee-dot">◆</span>
+                <span>CODER</span><span class="marquee-dot">◆</span>
+                <span>LEARNER</span><span class="marquee-dot">◆</span>
+                <span>PROBLEM SOLVER</span><span class="marquee-dot">◆</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ ABOUT ════════ -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-layout">
+                <!-- Left — Image + Tags -->
+                <div class="about-visual">
+                    <div class="about-image-wrap">
+                        <img src="1 (2).png" alt="Pawni Parakh" class="about-image">
+                        <div class="about-image-shape"></div>
+                    </div>
+                    <!-- Floating info tags -->
+                    <div class="info-tag info-tag-1 float-anim">
+                        <span class="tag-icon">📍</span> Vadodara, Gujarat
+                    </div>
+                    <div class="info-tag info-tag-2 float-anim" style="animation-delay: 0.5s;">
+                        <span class="tag-icon">📧</span> pawniparakh@gmail.com
+                    </div>
+                    <div class="info-tag info-tag-3 float-anim" style="animation-delay: 1s;">
+                        <span class="tag-icon">📞</span> +91 7666246089
+                    </div>
+                </div>
+
+                <!-- Right — Text -->
+                <div class="about-text">
+                    <div class="section-label">
+                        <span class="label-number">01</span>
+                        <span class="label-line"></span>
+                        <span class="label-text">ABOUT ME</span>
+                    </div>
+                    <h2 class="about-heading">
+                        Hello, I'm <span class="text-accent">Pawni!</span>
+                    </h2>
+                    <p class="about-quote">"I believe in learning by doing."</p>
+                    <p class="about-desc">I am a Computer Science Engineering student with a strong interest in problem-solving, programming, and continuous self-growth. I believe in improving consistently rather than chasing perfection.</p>
+                    <p class="about-desc">Currently focused on strengthening my fundamentals in programming, data structures & algorithms, and building real-world projects that make a difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ EDUCATION ════════ -->
+    <section class="education" id="education">
+        <div class="section-container">
+            <div class="section-label light">
+                <span class="label-number">02</span>
+                <span class="label-line"></span>
+                <span class="label-text">EDUCATION</span>
+            </div>
+
+            <div class="edu-timeline">
+                <div class="edu-line" aria-hidden="true"></div>
+                <div class="edu-item">
+                    <div class="edu-dot">
+                        <span class="edu-ping"></span>
+                    </div>
+                    <div class="edu-card">
+                        <span class="edu-year">2025 — Present</span>
+                        <h3 class="edu-title">Parul University</h3>
+                        <p class="edu-location">Vadodara, Gujarat</p>
+                        <p class="edu-detail">B.Tech in Computer Science Engineering<br>in association with <strong>Microsoft</strong></p>
+                        <div class="edu-decoration">
+                            <span class="edu-star">✦</span>
+                            <span class="edu-star">✦</span>
+                            <span class="edu-star">✦</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ SKILLS ════════ -->
+    <section class="skills" id="skills">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">03</span>
+                <span class="label-line"></span>
+                <span class="label-text">TECHNICAL SKILLS</span>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-glow"></div>
+                    <span class="skill-emoji">⚡</span>
+                    <h4 class="skill-category">Languages</h4>
+                    <div class="skill-pills">
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Java</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-glow"></div>
+                    <span class="skill-emoji">🧠</span>
+                    <h4 class="skill-category">Concepts</h4>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Data Structures</span>
+                        <span class="skill-pill">Algorithms</span>
+                        <span class="skill-pill">OOP</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-glow"></div>
+                    <span class="skill-emoji">🌐</span>
+                    <h4 class="skill-category">Web Dev</h4>
+                    <div class="skill-pills">
+                        <span class="skill-pill">HTML</span>
+                        <span class="skill-pill">CSS</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ PROJECTS ════════ -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-label light">
+                <span class="label-number">04</span>
+                <span class="label-line"></span>
+                <span class="label-text">PROJECTS</span>
+            </div>
+
+            <div class="projects-grid">
+                <!-- FinInsight -->
+                <div class="project-card" id="projectFinInsight">
+                    <div class="project-number">01</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-emoji">🚀</span>
+                            <h3 class="project-title">FinInsight</h3>
+                        </div>
+                        <p class="project-desc">Built an AI-powered system that automated credit underwriting using machine-learning models and an interactive real-time dashboard for financial analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">ML</span>
+                        </div>
+                    </div>
+                    <div class="project-arrow">→</div>
+                </div>
+
+                <!-- TCS Clone -->
+                <div class="project-card" id="projectTCSClone">
+                    <div class="project-number">02</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-emoji">🌐</span>
+                            <h3 class="project-title">TCS — Clone</h3>
+                        </div>
+                        <p class="project-desc">Recreated TCS.com with pixel-perfect accuracy, replicating complex layouts, responsive behavior, and smooth CSS animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                    <div class="project-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ STRENGTHS / LANGUAGES / INTERESTS ════════ -->
+    <section class="extras" id="extras">
+        <div class="section-container">
+            <div class="section-label">
+                <span class="label-number">05</span>
+                <span class="label-line"></span>
+                <span class="label-text">MORE ABOUT ME</span>
+            </div>
+
+            <div class="extras-grid">
+                <!-- Strengths -->
+                <div class="extra-card">
+                    <div class="extra-icon-wrap">
+                        <span class="extra-icon">💎</span>
+                    </div>
+                    <h3 class="extra-title">Strengths</h3>
+                    <div class="extra-chips">
+                        <span class="chip">Problem-solving mindset</span>
+                        <span class="chip">Consistency over perfection</span>
+                        <span class="chip">Quick learner</span>
+                        <span class="chip">Good communication</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="extra-card">
+                    <div class="extra-icon-wrap">
+                        <span class="extra-icon">🌍</span>
+                    </div>
+                    <h3 class="extra-title">Languages</h3>
+                    <div class="lang-grid">
+                        <div class="lang-item">
+                            <span class="lang-name">English</span>
+                            <span class="lang-badge fluent">Fluent</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Hindi</span>
+                            <span class="lang-badge fluent">Fluent</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Marathi</span>
+                            <span class="lang-badge fluent">Fluent</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">French</span>
+                            <span class="lang-badge beginner">Beginner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interests -->
+                <div class="extra-card">
+                    <div class="extra-icon-wrap">
+                        <span class="extra-icon">🎯</span>
+                    </div>
+                    <h3 class="extra-title">Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <span class="interest-emoji">💃</span>
+                            <span class="interest-name">Dancing</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-emoji">💻</span>
+                            <span class="interest-name">Tech & Coding</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-emoji">📚</span>
+                            <span class="interest-name">Learning New Skills</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-emoji">🌱</span>
+                            <span class="interest-name">Personal Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ CONTACT ════════ -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-label light">
+                <span class="label-number">06</span>
+                <span class="label-line"></span>
+                <span class="label-text">GET IN TOUCH</span>
+            </div>
+
+            <div class="contact-layout">
+                <h2 class="contact-heading">
+                    Let's<br><span class="text-accent">Connect.</span>
+                </h2>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Vadodara, Gujarat</span>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:pawniparakh@gmail.com" class="contact-value contact-link">pawniparakh@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+917666246089" class="contact-value contact-link">+91 7666246089</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ FOOTER ════════ -->
+    <footer class="footer">
+        <p class="footer-tagline">"Not aiming to be perfect, just getting better every day."</p>
+        <div class="footer-bottom">
+            <span>© 2026 Pawni Parakh</span>
+            <div class="footer-links">
+                <a href="https://github.com/pawniparakh" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/pawni.not.found/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/pawni-parakh-488a082b5/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ════════ SCRIPTS ════════ -->
+    <script>
+        /* ── Wait for GSAP ── */
+        window.addEventListener('DOMContentLoaded', () => {
+
+            /* ── Custom Cursor ── */
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+            document.addEventListener('mousemove', e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.left = mouseX + 'px';
+                dot.style.top = mouseY + 'px';
+            });
+
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                ring.style.left = ringX + 'px';
+                ring.style.top = ringY + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+
+            // Cursor hover effect on interactive elements
+            document.querySelectorAll('a, button, .project-card, .skill-card, .extra-card, .contact-card').forEach(el => {
+                el.addEventListener('mouseenter', () => ring.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => ring.classList.remove('cursor-hover'));
+            });
+
+            /* ── Navbar shrink ── */
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 60);
+            });
+
+            /* ── Mobile nav ── */
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('open');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileNav.classList.remove('open');
+                });
+            });
+
+            /* ── Smooth scroll ── */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            /* ── GSAP Animations ── */
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                /* Hero entrance */
+                const heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                heroTL
+                    .from('.hero-image-frame', { scale: 0.8, opacity: 0, duration: 1.2, delay: 0.3 })
+                    .from('.floating-badge', { scale: 0, opacity: 0, duration: 0.6, stagger: 0.15 }, '-=0.6')
+                    .from('#heroGreeting', { y: 30, opacity: 0, duration: 0.6 }, '-=0.8')
+                    .from('.name-line', { y: 60, opacity: 0, duration: 0.8, stagger: 0.12 }, '-=0.5')
+                    .from('#heroTagline', { y: 20, opacity: 0, duration: 0.6 }, '-=0.4')
+                    .from('.social-pill', { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.3')
+                    .from('#scrollIndicator', { y: -15, opacity: 0, duration: 0.5 }, '-=0.2');
+
+                /* Parallax bg text */
+                gsap.to('.hero-bg-text', {
+                    yPercent: 30,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+
+                /* Section reveals — use set+to pattern for reliability */
+                const sections = document.querySelectorAll('.about, .education, .skills, .projects, .extras, .contact');
+                sections.forEach(section => {
+                    const elements = section.querySelectorAll('.section-label, h2, h3, p, .about-image-wrap, .info-tag, .edu-item, .skill-card, .project-card, .extra-card, .contact-card, .about-quote, .about-desc, .contact-heading');
+
+                    gsap.set(elements, { y: 40, opacity: 0 });
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: 'top 85%',
+                        onEnter: () => {
+                            gsap.to(elements, {
+                                y: 0,
+                                opacity: 1,
+                                duration: 0.7,
+                                stagger: 0.08,
+                                ease: 'power2.out'
+                            });
+                        },
+                        once: true
+                    });
+                });
+
+                /* Skill pills */
+                gsap.set('.skill-pill', { scale: 0, opacity: 0 });
+                ScrollTrigger.create({
+                    trigger: '.skills',
+                    start: 'top 80%',
+                    onEnter: () => {
+                        gsap.to('.skill-pill', {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.4,
+                            stagger: 0.05,
+                            ease: 'back.out(1.7)'
+                        });
+                    },
+                    once: true
+                });
+
+                /* Project cards */
+                gsap.set('.project-card', { x: -60, opacity: 0 });
+                ScrollTrigger.create({
+                    trigger: '.projects',
+                    start: 'top 80%',
+                    onEnter: () => {
+                        gsap.to('.project-card', {
+                            x: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            stagger: 0.2,
+                            ease: 'power3.out'
+                        });
+                    },
+                    once: true
+                });
+
+                /* Footer tagline */
+                gsap.set('.footer-tagline', { y: 30, opacity: 0 });
+                ScrollTrigger.create({
+                    trigger: '.footer',
+                    start: 'top 92%',
+                    onEnter: () => {
+                        gsap.to('.footer-tagline', {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8
+                        });
+                    },
+                    once: true
+                });
+
+                /* Refresh triggers after smooth scroll nav clicks */
+                document.querySelectorAll('a[href^="#"]').forEach(a => {
+                    a.addEventListener('click', () => {
+                        setTimeout(() => ScrollTrigger.refresh(), 600);
+                    });
+                });
+            }
+
+            /* ── Tilt effect on hero image ── */
+            const heroFrame = document.querySelector('.hero-image-frame');
+            if (heroFrame) {
+                heroFrame.addEventListener('mousemove', e => {
+                    const rect = heroFrame.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    heroFrame.style.transform = `perspective(800px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg)`;
+                });
+                heroFrame.addEventListener('mouseleave', () => {
+                    heroFrame.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
